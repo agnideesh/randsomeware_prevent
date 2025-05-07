@@ -1,0 +1,93 @@
+============================
+Ransomware Simulation System
+How To Use - Step-by-Step Guide
+============================
+
+**1. Prerequisites**
+- Python 3.6 or higher must be installed.
+- Install dependencies:
+  pip install -r requirements.txt
+
+**2. Files Needed**
+- main_controller.py
+- security_monitor.py
+- attack_agent.py
+- recovery.py
+- requirements.txt
+
+**3. Initial Setup**
+- Place all files in the same directory.
+- Create a TEST folder with some sample files (do NOT use important data).
+
+**4. Basic Usage - All-in-One Controller**
+- Open a terminal or command prompt.
+- Navigate to the project directory.
+- Run:
+  python main_controller.py
+
+**5. Main Menu Options**
+- 1: View Security Monitor Status
+- 2: Start/Stop Security Monitor
+- 3: Launch Ransomware Attack Simulation
+- 4: Launch Recovery Utility
+- 5: Clear System Lockdown
+- 6: Exit
+
+**6. Demonstration Workflow (Using Controller)**
+A. Start Security Monitor:
+   - Choose option 2 to start monitoring your TEST folder.
+
+B. Simulate Ransomware Attack:
+   - Choose option 3 and select the same TEST folder.
+   - If the monitor is active, it will detect and block the attack, lock your Windows session, and create a lockdown flag.
+
+C. Recover Files:
+   - After unlocking your session, choose option 4 to run the recovery utility on the TEST folder.
+   - The tool will restore your files and clean up attack artifacts.
+
+D. Clear Lockdown:
+   - If a lockdown flag remains, use option 5 to clear it.
+
+**7. Advanced Usage - Running Components Separately**
+
+You can run each component in separate terminals for more advanced testing and demonstration:
+
+A. Security Monitor (Terminal 1):
+   - Open a new terminal window
+   - Navigate to the project directory
+   - Run: 
+     python security_monitor.py [path_to_folder_to_monitor]
+   - Example: 
+     python security_monitor.py C:\TestFolder
+
+B. Attack Agent (Terminal 2):
+   - Open a new terminal window
+   - Navigate to the project directory
+   - Run: 
+     python attack_agent.py [path_to_target_folder]
+   - Example: 
+     python attack_agent.py C:\TestFolder
+
+C. Recovery (Terminal 3):
+   - Open a new terminal window
+   - Navigate to the project directory
+   - Run: 
+     python recovery.py [path_to_folder_to_recover]
+   - Example: 
+     python recovery.py C:\TestFolder
+
+Notes for running separately:
+- Start the security monitor first before launching an attack
+- The attack agent will check if the system is locked before proceeding
+- Make sure to use the same target directory in each command
+
+**8. Logs and Analysis**
+- Security events: security_monitor.log
+- Recovery process: recovery.log
+
+**9. Safety Notes**
+- Only use in a safe, isolated environment.
+- Never use on real or important data.
+- For educational and demonstration purposes only.
+
+============================ 
